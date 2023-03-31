@@ -1,3 +1,4 @@
+import { composeWithDevTools } from "@redux-devtools/extension";
 import {applyMiddleware, createStore} from "redux";
 import thunk from "redux-thunk";
 import reducers from "./ReduxReducer";
@@ -5,5 +6,5 @@ import reducers from "./ReduxReducer";
 export const store = createStore(
     reducers,
     {},
-    applyMiddleware(thunk),
+    composeWithDevTools(applyMiddleware(thunk)),
 )
